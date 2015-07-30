@@ -8,16 +8,13 @@
 PowerShield batteryMonitor;
 
 void setup() {
-  
+  batteryMonitor.begin();
+  batteryMonitor.reset();
+  batteryMonitor.quickStart();
+  delay(1000);
 }
 
-void loop() {    
-
-
-    Wire.begin(); 
-    batteryMonitor.reset();
-    batteryMonitor.quickStart();
-    delay(1000);
+void loop() {
     float cellVoltage = batteryMonitor.getVCell();
     float stateOfCharge = batteryMonitor.getSoC();
     Spark.publish("ps-voltage", String(cellVoltage), 60, PRIVATE);
@@ -25,6 +22,4 @@ void loop() {
     Spark.publish("ps-soc", String(stateOfCharge), 60, PRIVATE);
     delay(100);
     System.sleep(SLEEP_MODE_DEEP, 600);
-
-
 }
