@@ -8,18 +8,29 @@
 PowerShield batteryMonitor;
 
 void setup() {
-  batteryMonitor.begin();
-  batteryMonitor.reset();
-  batteryMonitor.quickStart();
-  delay(1000);
+    Serial.begin(9600); 
+    // This essentially starts the I2C bus
+    batteryMonitor.begin(); 
+    // This sets up the fuel gauge
+    batteryMonitor.quickStart();
+    // Wait for it to settle down
+    delay(500); //delay 0.5 second
 }
 
-void loop() {
+void loop() { 
+    
+     // Read the volatge of the LiPo
     float cellVoltage = batteryMonitor.getVCell();
+    // Read the State of Charge of the LiPo
     float stateOfCharge = batteryMonitor.getSoC();
-    Spark.publish("ps-voltage", String(cellVoltage), 60, PRIVATE);
-    delay(100);
-    Spark.publish("ps-soc", String(stateOfCharge), 60, PRIVATE);
-    delay(100);
-    System.sleep(SLEEP_MODE_DEEP, 600);
+    
+    //Publish Cell Voltage to cloud
+    Spark.publish("ps-voltage", String(cellVoltage));
+    
+    //Publish State of Charge to Cloud
+    Spark.publish("ps-soc", String(stateOfCharge));
+    delay(1000); //delay 1 second
+
+
 }
+
