@@ -28,14 +28,14 @@ class PowerShield {
 
 	public:
 	    PowerShield();
-		boolean begin();
+		bool begin();
 		float getVCell();
 		float getSoC();
 		int getVersion();
 		byte getCompensateValue();
 		byte getAlertThreshold();
 		void setAlertThreshold(byte threshold);
-		boolean getAlert();
+		bool getAlert();
 		void clearAlert();
 		void reset();
 		void quickStart();

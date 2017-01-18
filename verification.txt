@@ -1,0 +1,20 @@
+How to verify this library
+
+Close the ALRT solder bridge on a Power Shield
+
+Connect a Photon to the Power Shield
+
+Flash the interrupt example
+
+  particle flash my_device examples/3_Interrupt_on_low_voltage/3_Interrupt_on_low_voltage.ino
+
+Watch the events
+
+  particle subscribe ps mine
+
+Charge the battery through USB and see that the battery state of charge goes up
+
+Disconnect the charger and see that the battery state of charge goes down
+
+Wait for the state of charge to go below 30% and see that the event ps-low-battery is published once.
+

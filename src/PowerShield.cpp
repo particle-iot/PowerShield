@@ -33,7 +33,7 @@ PowerShield::PowerShield()
 
 }
 
-boolean PowerShield::begin()
+bool PowerShield::begin()
 {
 	Wire.begin();
 	return 1;
@@ -103,7 +103,7 @@ void PowerShield::setAlertThreshold(byte threshold) {
 }
 
 // Check if alert interrupt was generated
-boolean PowerShield::getAlert() {
+bool PowerShield::getAlert() {
 
 	byte MSB = 0;
 	byte LSB = 0;
