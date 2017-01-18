@@ -26,7 +26,7 @@ void setup() {
     batteryMonitor.quickStart();
 
     // Configure alert pin for interrupt
-    pinMode(D3, INPUT);
+    pinMode(D3, INPUT_PULLUP);
     attachInterrupt(D3, lowBatteryInterrupt, FALLING);
 
     // Alert at a higher level than normal as an example
