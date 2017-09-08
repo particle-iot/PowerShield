@@ -1,4 +1,5 @@
 # Power Shield
+[![Build Status](https://travis-ci.org/spark/PowerShield.svg?branch=master)](https://travis-ci.org/spark/PowerShield)
 
 _The Power Shield library provides functions to use the on-board MAX17043 fuel guage via I2C_
 
