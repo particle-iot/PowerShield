@@ -32,8 +32,8 @@ void loop() {
 
 See [complete example](examples/sawtooth/sawtooth.ino) in the examples directory.
 
-1. [**Read voltage over serial:**](examples/1_Read_voltage_over_serial/1_Read_voltage_over_serial.cpp) In this example the Particle device sends the volatge and SoC readings over serial every 1 second
-2. [**Publish voltage readings:**](examples/2_Publish_voltage_readings/2_Publish_voltage_readings.cpp) In this example the Particle device publishes the voltage and SoC readings every 10 minutes and stays in deep sleep mode for the rest of the time
+1. [**Read voltage over serial:**](examples/1_Read_voltage_over_serial/1_Read_voltage_over_serial.ino) In this example the Particle device sends the volatge and SoC readings over serial every 1 second
+2. [**Publish voltage readings:**](examples/2_Publish_voltage_readings/2_Publish_voltage_readings.ino) In this example the Particle device publishes the voltage and SoC readings every 10 minutes and stays in deep sleep mode for the rest of the time
 3. [**Interrupt on low battery:**](examples/3_Interrupt_on_low_voltage/3_Interrupt_on_low_voltage.ino) In this example the Particle device publishes an event when the battery state of charge becomes low.
 
 ## Reference
